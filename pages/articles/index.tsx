@@ -19,6 +19,7 @@ export default function Articles() {
         }
 
         getArticles();
+        document.getElementsByTagName('main')[0].classList.add('appear');
     }, []);
 
     return (
@@ -30,6 +31,7 @@ export default function Articles() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.container}>
+                <h1 className={styles.heading}>Articles</h1>
                 {articles?.length ? (
                     articles.map((article, i) => <Article key={i} article={article} />)
                 ) : (

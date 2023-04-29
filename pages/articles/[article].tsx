@@ -7,11 +7,10 @@ import { useRouter } from 'next/router';
 export default function Articles() {
     const router = useRouter();
     const [article, setArticle] = useState<ArticleType | null>(null);
-    console.log(router.pathname);
-    const { article: articleId } = router.query as { article: string };
 
     useEffect(() => {
         async function getArticle() {
+            const { article: articleId } = router.query as { article: string };
             try {
                 if (!articleId) return console.error('No article id');
                 const res = await fetch('/api/getSingleArticle?article=' + articleId);
@@ -34,11 +33,17 @@ export default function Articles() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {article && (
-                <main className={styles.container} style={{ backgroundImage: `url(${article.image})` }}>
+                <main className={styles.container}>
                     <div className={styles.content}>
                         <h1>{article.title}</h1>
                         <span>
                             {article.genre} | {article.author}
+                        </span>
+                        <br />
+                        <span>
+                            {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(
+                                new Date(article.timestamp)
+                            )}
                         </span>
                         <pre>
                             <p>{article.content}</p>

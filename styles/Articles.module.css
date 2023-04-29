@@ -1,18 +1,33 @@
 .container {
-    min-width: 80vw;
+    min-width: 10vw;
+    margin: 0;
     padding: 1rem;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    place-items: center;
 
     color: var(--text-color-dark);
 
     text-align: center;
+
+    opacity: 0;
+}
+
+.container h1 {
+    font-size: 2.5rem;
+}
+
+h1.heading {
+    grid-column: -1/1;
+    margin-block: 7vh;
+    font-size: 3.5rem;
 }
 
 .article {
     max-width: 300px;
+    min-width: 300px;
     min-height: 200px;
 
     border-radius: 1rem;
@@ -23,6 +38,8 @@
     overflow: hidden;
 
     transition: scale 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    font-family: sans-serif;
 
     cursor: pointer;
 }

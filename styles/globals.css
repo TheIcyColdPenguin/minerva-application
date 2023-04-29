@@ -3,9 +3,10 @@
     --border-radius: 12px;
     --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
         'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-    --primary-bg-hex: #e6d5d0;
-    --primary-bg-hex-lighter: #f1e7e4;
     --secondary-bg-hex: #3c3635;
+    --secondary-bg-hex-lighter: #5f5654;
+    --primary-bg-hex: #e6d5d0;
+    --primary-bg-hex-lighter: hsl(14, 32%, 92%);
     --text-color-dark: #374151;
     --text-color-dark-lighter: #48556a;
     --text-color-light: #e7e4d4;
@@ -24,11 +25,36 @@ body {
 }
 
 body {
-    color: var(--text-color);
+    color: var(--secondary-bg-hex-lighter);
     background: var(--primary-bg-hex);
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+@keyframes appearing {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes disappearing {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.appear {
+    animation: appearing 0.5s ease-in-out 0s forwards;
+}
+
+.disappear {
+    animation: disappearing 0.5s ease-in-out forwards;
 }

@@ -16,5 +16,6 @@ model Article {
     genre String
     author String
     content String
+    timestamp String
     image String?
 }
