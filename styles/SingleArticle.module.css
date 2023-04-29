@@ -1,0 +1,29 @@
+.container {
+    position: sticky;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: contain;
+    background-image: none !important;
+}
+.container .content {
+    position: absolute;
+    inset: 0;
+    /* background-color: var(--primary-bg-hex); */
+}
+.container h1 {
+    margin-block: 2rem;
+    margin-inline: 1rem;
+}
+
+.container span {
+    margin: 1rem;
+    font-weight: 100;
+    color: #686868;
+}
+
+.container p {
+    margin: 1rem 5rem;
+}

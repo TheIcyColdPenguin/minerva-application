@@ -13,7 +13,6 @@ export default function Articles() {
                 const res = await fetch('/api/getArticles');
                 const articles = await res.json();
                 setArticles(articles);
-                console.log('ok', articles);
             } catch {
                 console.error('Error getting articles');
             }

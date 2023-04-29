@@ -21,14 +21,11 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
 }
 
 body {
     color: var(--text-color);
     background: var(--primary-bg-hex);
-    display: grid;
-    place-items: center;
 }
 
 a {

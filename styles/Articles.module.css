@@ -23,6 +23,8 @@
     overflow: hidden;
 
     transition: scale 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    cursor: pointer;
 }
 
 .article:hover {
