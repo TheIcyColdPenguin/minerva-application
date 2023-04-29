@@ -4,9 +4,7 @@ import { FormEvent } from 'react';
 export default function Form() {
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const formData = Object.fromEntries(
-            new FormData(e.currentTarget).entries()
-        );
+        const formData = Object.fromEntries(new FormData(e.currentTarget).entries());
         console.table(formData);
     }
 
