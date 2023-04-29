@@ -22,7 +22,7 @@ export default function Articles() {
         }
 
         getArticle();
-    }, []);
+    }, [router.query]);
 
     return (
         <>
