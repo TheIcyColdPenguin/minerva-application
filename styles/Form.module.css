@@ -12,14 +12,13 @@
     grid-template-rows: 1fr 1fr 3fr 1fr;
     gap: 1rem;
     padding: 1rem;
-    padding-bottom: none;
 
     grid-template-areas:
         'title genre'
         'author image'
         'content content'
         'content content'
-        'submit submit';
+        'submit -';
 
     color: var(--secondary-bg-hex);
     font-size: larger;
@@ -45,7 +44,7 @@
     grid-area: content;
 }
 
-.form label[for='submit'] {
+.form button {
     grid-area: submit;
 }
 
@@ -62,10 +61,8 @@
 
 .form textarea {
     width: 100%;
-    /* height: 100%; */
     resize: vertical;
 }
 .form button {
-    /* margin: 1rem; */
-    margin-top: 1rem;
+    margin: 1rem;
 }
