@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import styles from '@/styles/Articles.module.css';
 import { useEffect, useState } from 'react';
-import { Article } from '@prisma/client';
+import type { Article as ArticleType } from '@prisma/client';
+import Article from '@/components/Article';
 
 export default function Articles() {
-    const [articles, setArticles] = useState<Article[]>([]);
+    const [articles, setArticles] = useState<ArticleType[]>([]);
 
     useEffect(() => {
         async function getArticles() {
@@ -30,12 +31,11 @@ export default function Articles() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.container}>
-                {articles?.length &&
-                    articles.map((article, i) => (
-                        <div key={i} className={styles.article}>
-                            <h2>{article.title}</h2>
-                        </div>
-                    ))}
+                {articles?.length ? (
+                    articles.map((article, i) => <Article key={i} article={article} />)
+                ) : (
+                    <h1>No articles found</h1>
+                )}
             </main>
         </>
     );

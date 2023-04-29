@@ -4,8 +4,10 @@
     --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
         'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
     --primary-bg-hex: #e6d5d0;
+    --primary-bg-hex-lighter: #f1e7e4;
     --secondary-bg-hex: #3c3635;
     --text-color-dark: #374151;
+    --text-color-dark-lighter: #48556a;
     --text-color-light: #e7e4d4;
 }
 
@@ -25,6 +27,8 @@ body {
 body {
     color: var(--text-color);
     background: var(--primary-bg-hex);
+    display: grid;
+    place-items: center;
 }
 
 a {
