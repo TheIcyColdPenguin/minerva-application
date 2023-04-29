@@ -1,8 +1,17 @@
-import styles from '@/styles/Form.module.css'
+import styles from '@/styles/Form.module.css';
+import { FormEvent } from 'react';
 
 export default function Form() {
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const formData = Object.fromEntries(
+            new FormData(e.currentTarget).entries()
+        );
+        console.table(formData);
+    }
+
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
             <input id="title" type="text" name="title" />
 
@@ -20,5 +29,5 @@ export default function Form() {
 
             <button type="submit">Submit</button>
         </form>
-    )
+    );
 }
