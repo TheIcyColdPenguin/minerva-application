@@ -33,7 +33,7 @@ export default function Articles() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {article && (
-                <main className={styles.container}>
+                <main className={styles.container} onLoad={(e) => e.currentTarget.classList.add('appear')}>
                     <h1>{article.title}</h1>
                     <span>
                         {article.genre} | {article.author}

@@ -4,6 +4,8 @@
 
     display: grid;
     place-items: center;
+
+    opacity: 0;
 }
 
 .container > .container h1 {
