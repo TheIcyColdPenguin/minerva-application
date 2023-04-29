@@ -34,22 +34,20 @@ export default function Articles() {
             </Head>
             {article && (
                 <main className={styles.container}>
-                    <div className={styles.content}>
-                        <h1>{article.title}</h1>
-                        <span>
-                            {article.genre} | {article.author}
-                        </span>
-                        <br />
-                        <span>
-                            {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(
-                                new Date(article.timestamp)
-                            )}
-                        </span>
-                        <img className={styles.image} src={article.image || ''} alt="" />
-                        <pre>
-                            <p>{article.content}</p>
-                        </pre>
+                    <h1>{article.title}</h1>
+                    <span>
+                        {article.genre} | {article.author}
+                    </span>
+                    <br />
+                    <span>
+                        {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(article.timestamp))}
+                    </span>
+                    <div className={styles.image}>
+                        <img src={article.image || ''} alt="" />
                     </div>
+                    <pre>
+                        <p>{article.content}</p>
+                    </pre>
                 </main>
             )}
         </>
