@@ -45,6 +45,7 @@ export default function Articles() {
                                 new Date(article.timestamp)
                             )}
                         </span>
+                        <img className={styles.image} src={article.image || ''} alt="" />
                         <pre>
                             <p>{article.content}</p>
                         </pre>

@@ -12,11 +12,19 @@
 }
 
 .container span {
-    margin: 1rem;
+    margin-top: 1rem;
     font-weight: 100;
     color: #686868;
+    display: block;
 }
 
 .container p {
     margin: 1rem 5rem;
+}
+
+.container .image {
+    margin-top: 3rem;
+    display: block;
+    width: 100%;
+    object-fit: cover;
 }
