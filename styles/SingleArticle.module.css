@@ -6,9 +6,6 @@
     display: grid;
     place-items: center;
 }
-.container .content {
-    transform: translateX(-100%);
-}
 .container h1 {
     margin-block: 2rem;
     margin-inline: 1rem;
