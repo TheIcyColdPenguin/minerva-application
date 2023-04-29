@@ -23,3 +23,7 @@
 .form > button {
     margin-block-start: 1rem;
 }
+
+.form textarea {
+    resize: vertical;
+}

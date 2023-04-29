@@ -4,7 +4,8 @@ import { FormEvent } from 'react';
 export default function Form() {
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.currentTarget).entries());
+        const form = e.currentTarget;
+        const formData = Object.fromEntries(new FormData(form).entries());
 
         try {
             await fetch('/api/upload', {
@@ -14,8 +15,9 @@ export default function Form() {
                 },
                 body: JSON.stringify(formData),
             });
-        } catch {
-            console.error('Error submitting form');
+            form.reset();
+        } catch (e) {
+            console.error('Error submitting form', e);
         }
     }
 
