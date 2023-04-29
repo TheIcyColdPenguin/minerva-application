@@ -34,4 +34,5 @@
 }
 .container .image img {
     max-width: 50%;
+    border-radius: 1rem;
 }
