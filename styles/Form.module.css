@@ -1,0 +1,25 @@
+.form {
+    background-color: var(--secondary-bg-hex);
+    width: calc(var(--max-width) / 2);
+
+    max-width: calc(var(--max-width) / 2);
+    min-height: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    color: var(--text-color-light);
+}
+
+.form > label {
+    font-size: larger;
+    margin-block-start: 0.75rem;
+}
+.form > label:first-child {
+    margin-block-start: 0;
+}
+
+.form > button {
+    margin-block-start: 1rem;
+}
