@@ -2,10 +2,21 @@ import styles from '@/styles/Form.module.css';
 import { FormEvent } from 'react';
 
 export default function Form() {
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.currentTarget).entries());
-        console.table(formData);
+
+        try {
+            await fetch('/api/upload', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+        } catch {
+            console.error('Error submitting form');
+        }
     }
 
     return (
